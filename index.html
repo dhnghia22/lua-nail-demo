@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lụa — Sơn móng sáu sắc</title>
+<meta name="description" content="Lụa — bộ sơn móng sáu sắc, một lớp phủ. Thử màu trên tay trước khi chọn.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@200;300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="nav" id="nav">
+  <a class="brand" href="#top" aria-label="Lụa — về đầu trang">Lụa<span>.</span></a>
+  <nav class="nav-links" aria-label="Điều hướng chính">
+    <a href="#bo-suu-tap">Bộ sưu tập</a>
+    <a href="#cach-son">Cách sơn</a>
+    <a href="#dang-ky">Màu mới</a>
+  </nav>
+  <a class="cart" href="#bo-suu-tap" aria-live="polite">Giỏ <span id="cartCount">0</span></a>
+</header>
+
+<main id="top">
+
+  <!-- ===== Cảnh mở đầu: chọn lọ sơn, nền và móng đổi màu ===== -->
+  <section class="hero" id="hero" aria-label="Chọn màu sơn">
+    <div class="stage">
+      <canvas class="film" id="film" aria-hidden="true"></canvas>
+
+      <div class="hero-info">
+        <p class="eyebrow">Màu <span id="shadeIndex">05</span> / 06</p>
+        <h1 id="shadeName">Mận</h1>
+        <p class="hero-desc" id="shadeDesc"></p>
+        <div class="hero-actions">
+          <button class="btn btn-solid" data-add>Thêm vào giỏ · 289.000₫</button>
+          <button class="btn btn-ghost" data-play>Thử trên tay ↗</button>
+        </div>
+      </div>
+
+      <div class="bottles" id="bottles" role="group" aria-label="Sáu màu sơn"></div>
+
+      <aside class="picker" id="picker" aria-label="Thử màu trên tay">
+        <p class="eyebrow">Đang thử</p>
+        <p class="picker-name" id="pickerName">Mận</p>
+        <div class="swatches" id="swatches" role="group" aria-label="Chọn màu"></div>
+        <button class="btn btn-solid btn-small" data-add>Thêm vào giỏ</button>
+      </aside>
+
+      <div class="scroll-hint" aria-hidden="true"><span></span>Cuộn để thử màu</div>
+    </div>
+  </section>
+
+  <!-- ===== Bộ sưu tập ===== -->
+  <section class="section" id="bo-suu-tap">
+    <div class="section-head reveal">
+      <h2>Sáu sắc màu. <em>một lớp phủ.</em></h2>
+      <p>Mỗi màu được pha để lên chuẩn chỉ sau một lớp, khô nhanh và giữ độ bóng như lụa suốt nhiều ngày.</p>
+    </div>
+    <div class="grid" id="grid"></div>
+  </section>
+
+  <!-- ===== Cách sơn ===== -->
+  <section class="section steps" id="cach-son">
+    <div class="steps-tile reveal" aria-hidden="true"><canvas class="tile-film" data-image="start" data-focus="0.55,0.42" data-zoom="1.25"></canvas></div>
+    <div class="steps-text reveal">
+      <h2>Ba bước cho một lớp sơn <em>thật gọn.</em></h2>
+      <ol>
+        <li><strong>Làm sạch</strong><span>Lau móng bằng nước tẩy, để khô hẳn để sơn bám tốt hơn.</span></li>
+        <li><strong>Sơn một lớp</strong><span>Một đường giữa, hai đường cạnh. Không cần lớp thứ hai.</span></li>
+        <li><strong>Chờ hai phút</strong><span>Sơn tự san phẳng và khô bề mặt trong khoảng hai phút.</span></li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ===== Thông điệp ===== -->
+  <section class="section statement">
+    <h2 class="reveal">Xem màu trên tay <em>trước khi</em><br>nó chạm vào tay bạn.</h2>
+    <ul class="facts reveal">
+      <li><b>06</b><span>sắc màu</span></li>
+      <li><b>01</b><span>lớp phủ</span></li>
+      <li><b>02′</b><span>khô bề mặt</span></li>
+      <li><b>10</b><span>ngày bền màu</span></li>
+    </ul>
+    <a class="btn btn-accent reveal" href="#top">Thử màu ngay</a>
+  </section>
+
+  <!-- ===== Đăng ký ===== -->
+  <section class="section signup" id="dang-ky">
+    <div class="signup-tile reveal" aria-hidden="true"><canvas class="tile-film" data-image="end" data-focus="0.5,0.68" data-zoom="1.7"></canvas></div>
+    <div class="signup-text reveal">
+      <h2>Màu mới, <em>biết trước.</em></h2>
+      <p>Để lại email, chúng tôi báo bạn khi có sắc màu mới — mỗi mùa một lần.</p>
+      <form id="signupForm" novalidate>
+        <label class="sr-only" for="email">Email</label>
+        <input id="email" type="email" placeholder="email@cuaban.vn" autocomplete="email" required>
+        <button class="btn btn-accent" type="submit">Đăng ký</button>
+      </form>
+      <p class="form-note" id="formNote" role="status"></p>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <span class="brand">Lụa<span>.</span></span>
+  <span>Sơn móng thủ công · Nội dung và giá là mẫu minh hoạ</span>
+  <span>© 2026</span>
+</footer>
+
+<script src="film.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
